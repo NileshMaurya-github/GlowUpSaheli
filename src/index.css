@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* GlowUpSaheli - Bright Luminous Theme (Default) */
+    --background: 40 30% 99%;
+    /* Almost white, warm cream */
+    --foreground: 20 20% 5%;
+    /* Ultra Dark Brown-Black for Max Contrast */
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 20% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 20% 5%;
+
+    /* Vivid Peach Primary */
+    --primary: 15 90% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 350 80% 96%;
+    --secondary-foreground: 350 40% 30%;
+
+    --muted: 30 30% 96%;
+    --muted-foreground: 20 10% 25%;
+    /* Darker Grey for subtitles */
+
+    --accent: 120 40% 96%;
+    --accent-foreground: 120 40% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 20% 90%;
+    --input: 20 20% 90%;
+    --ring: 15 90% 65%;
+
+    --radius: 1.5rem;
+
+    /* Custom Colors */
+    --peach: 15 100% 88%;
+    --peach-dark: 15 80% 60%;
+    --blush: 350 70% 90%;
+    --blush-dark: 350 60% 70%;
+    --sage: 120 30% 85%;
+    --sage-dark: 120 40% 40%;
+    --cream: 40 50% 97%;
+    --warm-brown: 25 40% 40%;
+    --rose-gold: 15 70% 65%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(180deg, #FFFFFF 0%, #FFF5F0 100%);
+    --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 245, 240, 0.8));
+    --gradient-glow: radial-gradient(circle, rgba(255, 200, 180, 0.4) 0%, transparent 70%);
+
+    /* Shadows */
+    --shadow-soft: 0 10px 40px -10px rgba(255, 180, 160, 0.15);
+    --shadow-glow: 0 0 30px rgba(255, 150, 130, 0.3);
+    --shadow-card: 0 15px 30px -5px rgba(0, 0, 0, 0.05);
+    --shadow-neon: 0 0 15px rgba(255, 120, 100, 0.4);
+
+    /* Glass Effect */
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.6);
+
+    /* 3D */
+    --perspective: 1000px;
+  }
+
+  .dark {
+    --background: 20 20% 10%;
+    --foreground: 30 30% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+    @apply font-medium;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-glow {
+    background: var(--gradient-glow);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--rose-gold)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-sans {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
