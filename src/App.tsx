@@ -14,6 +14,8 @@ import NotFound from "./pages/NotFound";
 import Blog from "./pages/Blog";
 import Privacy from "./pages/Privacy";
 import Disclaimer from "./pages/Disclaimer";
+import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
 
 import { HelmetProvider } from "react-helmet-async";
 
@@ -38,6 +40,9 @@ const App = () => (
             <Route path="/learn" element={<Learn />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/about" element={<About />} />
+            <Route path="/about-us" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
             <Route path="*" element={<NotFound />} />
