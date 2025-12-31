@@ -12,32 +12,40 @@ import Learn from "./pages/Learn";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Blog from "./pages/Blog";
+import Privacy from "./pages/Privacy";
+import Disclaimer from "./pages/Disclaimer";
+
+import { HelmetProvider } from "react-helmet-async";
 
 const queryClient = new QueryClient();
 
 import ScrollToTop from "./components/layout/ScrollToTop";
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/body-care" element={<BodyCare />} />
-          <Route path="/body-care/:partId" element={<BodyPartDetail />} />
-          <Route path="/ingredients" element={<Ingredients />} />
-          <Route path="/vitamins" element={<Vitamins />} />
-          <Route path="/learn" element={<Learn />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/body-care" element={<BodyCare />} />
+            <Route path="/body-care/:partId" element={<BodyPartDetail />} />
+            <Route path="/ingredients" element={<Ingredients />} />
+            <Route path="/vitamins" element={<Vitamins />} />
+            <Route path="/learn" element={<Learn />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/privacy-policy" element={<Privacy />} />
+            <Route path="/disclaimer" element={<Disclaimer />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;

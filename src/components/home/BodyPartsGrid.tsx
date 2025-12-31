@@ -54,8 +54,8 @@ export const BodyPartsGrid = () => {
             >
               <Link to={`/body-care/${part.slug}`} className="block h-full">
                 <TiltCard
-                  classNameContent="bg-white/40 border border-white/60 backdrop-blur-md flex flex-col items-center justify-center text-center p-6 gap-4"
-                  className="rounded-2xl"
+                  classNameContent="bg-white/95 border border-white/50 backdrop-blur-md flex flex-col items-center justify-between text-center p-6 py-8 gap-2 shadow-md"
+                  className="rounded-3xl"
                 >
                   <div className="text-6xl filter drop-shadow-md transform transition-transform duration-300 group-hover:scale-110">{part.emoji}</div>
                   <div>
@@ -66,8 +66,8 @@ export const BodyPartsGrid = () => {
                       {part.description}
                     </p>
                   </div>
-                  <div className="mt-auto pt-4 flex items-center gap-1 text-primary text-sm font-bold uppercase tracking-widest opacity-80 group-hover:opacity-100 transition-opacity">
-                    Explore <ArrowRight className="w-4 h-4 ml-1" />
+                  <div className="mt-auto mb-2 px-6 py-2.5 bg-white/90 hover:bg-white backdrop-blur-sm rounded-full text-primary text-xs font-bold uppercase tracking-widest shadow-sm hover:shadow-md transition-all flex items-center gap-2 group-hover:-translate-y-1">
+                    Explore <ArrowRight className="w-3.5 h-3.5" />
                   </div>
                 </TiltCard>
               </Link>

@@ -372,10 +372,15 @@ const bodyPartData: Record<string, DataStructure> = {
   }
 };
 
+import SEO from "@/components/SEO";
+
+// ... existing imports
+
 const BodyPartDetail = () => {
   const { partId } = useParams();
   const data = bodyPartData[partId || "face"] || bodyPartData["face"];
 
+  // ... tabs data
   const routineTabs = [
     { id: "morning", label: "Morning", icon: Sun, data: data.morningRoutine },
     { id: "afternoon", label: "Afternoon", icon: Coffee, data: data.afternoonRoutine },
@@ -385,6 +390,23 @@ const BodyPartDetail = () => {
 
   return (
     <Layout>
+      <SEO
+        title={`${data.name} Routine - Natural Glow Up Tips | GlowUpSaheli`}
+        description={data.overview}
+        canonical={`/body-care/${partId || "face"}`}
+        keywords={[data.name.toLowerCase(), "skin care", "routine", "natural remedies", "glow up"]}
+        ogType="article"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": `${data.name} - Natural Care Guide`,
+          "description": data.overview,
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://glowupsaheli.vercel.app/body-care/${partId || "face"}`
+          }
+        }}
+      />
       {/* 1. Hero Header */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent -z-10" />

@@ -160,6 +160,10 @@ const allIngredients = [
 
 const categories = ["All", "Hydration", "Brightening", "Toning", "Moisturizing", "Cleansing", "Nourishing", "Antibacterial", "Growth"];
 
+import SEO from "@/components/SEO";
+
+// ... imports
+
 const Ingredients = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -174,6 +178,12 @@ const Ingredients = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Natural Ingredients for Glowing Skin | GlowUpSaheli"
+        description="Discover the benefits of natural ingredients like Aloe Vera, Turmeric, and more for skincare and hair care."
+        canonical="/ingredients"
+        keywords={["natural ingredients", "skincare", "hair care", "aloe vera", "turmeric", "diy beauty"]}
+      />
       {/* Header */}
       <section className="py-12 md:py-20 gradient-hero">
         <div className="container mx-auto px-4">
@@ -186,12 +196,12 @@ const Ingredients = () => {
               <Leaf className="w-4 h-4 text-sage-dark" />
               <span className="text-sm font-medium text-sage-dark">Natural Ingredients Library</span>
             </div>
-            
+
             <h1 className="font-display text-4xl md:text-5xl font-semibold mb-4">
               Nature's Best for
               <span className="text-gradient block">Your Glow</span>
             </h1>
-            
+
             <p className="text-lg text-muted-foreground mb-8">
               Discover the power of natural ingredients. Learn what each does, how to use it, and what to be careful about.
             </p>
@@ -240,9 +250,8 @@ const Ingredients = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className={`p-6 rounded-2xl bg-card border border-border hover:shadow-card transition-all cursor-pointer ${
-                  expandedIngredient === ingredient.name ? "ring-2 ring-primary" : ""
-                }`}
+                className={`p-6 rounded-2xl bg-card border border-border hover:shadow-card transition-all cursor-pointer ${expandedIngredient === ingredient.name ? "ring-2 ring-primary" : ""
+                  }`}
                 onClick={() => setExpandedIngredient(
                   expandedIngredient === ingredient.name ? null : ingredient.name
                 )}
@@ -276,7 +285,7 @@ const Ingredients = () => {
                       <p className="text-sm font-medium text-foreground mb-1">How to Use</p>
                       <p className="text-sm text-muted-foreground">{ingredient.howToUse}</p>
                     </div>
-                    
+
                     <div>
                       <p className="text-sm font-medium text-foreground mb-1">Frequency</p>
                       <p className="text-sm text-muted-foreground">{ingredient.frequency}</p>

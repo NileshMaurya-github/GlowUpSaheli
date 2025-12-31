@@ -184,6 +184,10 @@ const blogPosts = [
 
 const categories = ["All", "Vitamins", "Skincare", "Haircare", "Ingredients", "Body", "Wellness", "Hygiene"];
 
+import SEO from "@/components/SEO";
+
+// ... [existing data]
+
 const Blog = () => {
     const [activeCategory, setActiveCategory] = useState("All");
     const [searchQuery, setSearchQuery] = useState("");
@@ -197,6 +201,19 @@ const Blog = () => {
 
     return (
         <Layout>
+            <SEO
+                title="The Glow Journal - Beauty Blog | GlowUpSaheli"
+                description="Explore expert articles on natural skincare, hair care, vitamins, and holistic wellness routines."
+                canonical="/blog"
+                ogType="article"
+                schema={{
+                    "@context": "https://schema.org",
+                    "@type": "Blog", // or "CollectionPage"
+                    "name": "The Glow Journal",
+                    "description": "Expert insights on natural beauty.",
+                    "url": "https://glowupsaheli.vercel.app/blog"
+                }}
+            />
             {/* Header */}
             <section className="relative pt-32 pb-20 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent -z-10" />

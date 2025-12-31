@@ -60,8 +60,8 @@ export const IngredientsPreview = () => {
               className="h-[240px]"
             >
               <TiltCard
-                className={`rounded-2xl bg-gradient-to-br ${ingredient.color}`}
-                classNameContent="bg-white/30 backdrop-blur-md flex flex-col items-center justify-center p-4 text-center gap-2"
+                className={`rounded-3xl bg-gradient-to-br ${ingredient.color}`}
+                classNameContent="bg-white/95 backdrop-blur-md flex flex-col items-center justify-center p-4 text-center gap-2 shadow-sm border border-white/50"
               >
                 <div className="text-5xl mb-4 filter drop-shadow-md">{ingredient.emoji}</div>
                 <h3 className="font-display text-lg font-bold text-foreground">

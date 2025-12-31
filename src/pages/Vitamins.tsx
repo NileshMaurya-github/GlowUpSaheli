@@ -121,9 +121,19 @@ const wellnessTips = {
   }
 };
 
+import SEO from "@/components/SEO";
+
+// ... existing imports
+
 const Vitamins = () => {
   return (
     <Layout>
+      <SEO
+        title="Vitamins for Skin & Hair Growth | GlowUpSaheli"
+        description="Learn about essential vitamins (A, C, E, Biotin) for glowing skin and strong hair."
+        canonical="/vitamins"
+        keywords={["vitamins for skin", "hair growth vitamins", "biotin", "vitamin c", "natural supplements"]}
+      />
       {/* Header */}
       <section className="py-12 md:py-20 gradient-hero">
         <div className="container mx-auto px-4">
@@ -136,12 +146,12 @@ const Vitamins = () => {
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">Glow from Inside</span>
             </div>
-            
+
             <h1 className="font-display text-4xl md:text-5xl font-semibold mb-4">
               Vitamins & Nutrition
               <span className="text-gradient block">for Natural Glow</span>
             </h1>
-            
+
             <p className="text-lg text-muted-foreground">
               True beauty comes from within. Learn which vitamins and nutrients your body needs for healthy skin, hair, and nails.
             </p>
@@ -183,7 +193,7 @@ const Vitamins = () => {
               >
                 <div className="text-4xl mb-3">{vitamin.emoji}</div>
                 <h3 className="font-display text-xl font-medium mb-3">{vitamin.name}</h3>
-                
+
                 <div className="space-y-3">
                   <div>
                     <p className="text-xs font-medium text-foreground mb-1">Benefits</p>
